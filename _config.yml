@@ -1,24 +1,14 @@
-url: "https://lavanya.github.io"
-baseurl: ""
+url: "https://lavanyavijayakrishnan.github.io"
+baseurl: ""  # <-- THIS is important
 
-# Site settings
 title: Lavanya Vijayakrishnan
 email: lavanyavijayakrishnan@gmail.com
 description: "Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."
 
-
-# Team names, titles and social links
-
-# Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
-
-# Postal address (add as many lines as necessary)
-address:
-  - line: 3481 Melrose Place
-  - line: Beverly Hills, CA 90210
+remote_theme: y7kim/agency-jekyll-theme
 
 plugins:
   - jekyll-remote-theme
 
-# Build settings
 markdown: kramdown
 permalink: pretty
