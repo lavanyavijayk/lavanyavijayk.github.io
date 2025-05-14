@@ -1,29 +1,23 @@
 <!-- Portfolio Grid Section -->
-    <section id="portfolio" class="bg-light-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Portfolio</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-            </div>
-            <div class="row">
-            {% for post in site.posts %}
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal{{ post.modal-id }}" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/{{ post.thumbnail }}" class="img-responsive img-centered" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>{{ post.title }}</h4>
-                        <p class="text-muted">{{ post.subtitle }}</p>
-                    </div>
-                </div>
-            {% endfor %}
-            </div>
+<section id="portfolio" class="bg-light-gray">
+    <div class="container">
+  
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading">Skills</h2>
+          <h3 class="section-subheading text-muted">Here are a few tools, frameworks, and platforms I frequently work with.</h3>
         </div>
-    </section>
+      </div>
+  
+      <div class="row text-center" style="margin-top: 40px;">
+        {% assign skill_icons = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18" | split: "," %}
+        {% for i in skill_icons %}
+          <div class="col-xs-6 col-sm-4 col-md-2" style="margin-bottom: 30px;">
+            <img src="img/skills/{{ i }}.png" class="img-responsive img-centered" alt="Skill {{ i }}" style="max-height: 60px; margin: 0 auto;">
+          </div>
+        {% endfor %}
+      </div>
+  
+    </div>
+  </section>
+  

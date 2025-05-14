@@ -1,10 +1,11 @@
 source 'https://rubygems.org'
 
 gem 'jekyll', '~> 4.2.2'
-gem 'bundler', '~> 2.4'
+gem 'jekyll-remote-theme'
 
-gem 'jekyll-theme-agency'
-gem 'jekyll-sitemap'
-gem 'jekyll-seo-tag'
-gem 'jekyll-paginate'
-gem 'jekyll-feed'
+# Required standard libraries for Ruby 3.4+
+gem 'csv'
+gem 'logger'
+gem 'base64'
+gem 'bigdecimal'
+gem 'webrick'  # <--- Add this to fix the latest error
