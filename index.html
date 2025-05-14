@@ -1,133 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lavanya Vijayakrishnan</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f0f4f8;
-      color: #333;
-    }
-    .container {
-      max-width: 900px;
-      margin: auto;
-      background: white;
-      padding: 2rem;
-      border-radius: 12px;
-      margin-top: 2rem;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    }
-    .profile {
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      text-align: center;
-    }
-    .profile img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 1rem;
-    }
-    h1 {
-      margin-bottom: 0.3rem;
-      font-size: 2rem;
-    }
-    .social {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      margin: 0.5rem 0 1.5rem;
-    }
-    .social a {
-      text-decoration: none;
-      color: #0e76a8;
-    }
-    .download-btn {
-      display: inline-block;
-      background-color: #0e76a8;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 6px;
-      text-decoration: none;
-      margin-bottom: 2rem;
-    }
-    h2 {
-      color: #0e76a8;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 4px;
-      margin-top: 2rem;
-    }
-    .skills img {
-      width: 32px;
-      margin-right: 10px;
-      vertical-align: middle;
-    }
-    ul.projects a {
-      color: #0e76a8;
-      text-decoration: none;
-    }
-    @media (max-width: 600px) {
-      .container {
-        padding: 1rem;
-      }
-    }
-  </style>
-</head>
-<body>
+---
+layout: default
+---
 
-  <div class="container">
-    <div class="profile">
-      <img src="assets/profile.jpg" alt="Lavanya Vijayakrishnan">
-      <h1>Lavanya Vijayakrishnan</h1>
-      <div class="social">
-        <a href="mailto:vijayakrishnan.l@northeastern.edu">📧 Email</a>
-        <a href="https://linkedin.com/in/lavanyavijayakrishnan" target="_blank">🔗 LinkedIn</a>
-        <a href="https://github.com/lavanyavijayk" target="_blank">💻 GitHub</a>
-      </div>
-      <a href="Lavanya_Resume.pdf" download class="download-btn">📄 Download Resume (PDF)</a>
-    </div>
+<div class="home">
 
-    <h2>Education</h2>
-    <p><strong>Northeastern University</strong> – M.S. in Software Engineering (2024–2026)</p>
-    <p><strong>Model Engineering College</strong> – B.Tech in ECE (2015–2019)</p>
+  <h1>Posts</h1>
 
-    <h2>Skills</h2>
-    <p>
-      <strong>Languages:</strong> Java, Python, C++, JavaScript<br>
-      <strong>Cloud:</strong>
-      <span class="skills">
-        <img src="assets/aws.png" alt="AWS">
-        <img src="assets/gcp.png" alt="GCP">
-      </span><br>
-      <strong>Frameworks:</strong>
-      <span class="skills">
-        <img src="assets/beam.png" alt="Beam">
-        Docker, Kubernetes, Spark, Flask, Django, Terraform
-      </span>
-    </p>
+  <ul class="posts">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
 
-    <h2>Experience</h2>
-    <p><strong>QBurst Technologies</strong> – Software Engineer (Jul 2019 – Jul 2023)</p>
-    <ul>
-      <li>Engineered serverless trading platform using event-driven architecture (15% faster API).</li>
-      <li>Built ETL pipeline with AWS Glue & SimHash, reducing duplication by 85%.</li>
-      <li>Led DevOps & backend engineering for personalized video app on GCP.</li>
-    </ul>
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
-    <h2>Projects</h2>
-    <ul class="projects">
-      <li><a href="https://github.com/lavanyavijayk/DistributedKVStore" target="_blank">Distributed Key-Value Store with Raft</a></li>
-      <li><a href="https://github.com/lavanyavijayk/Defi-Sentinal" target="_blank">DeFi Sentinel – Crypto Fraud Detection</a></li>
-      <li><a href="https://github.com/lavanyavijayk/CrackDetector" target="_blank">Surface Crack Detection using CNN</a></li>
-    </ul>
-  </div>
-
-</body>
-</html>
+</div>
